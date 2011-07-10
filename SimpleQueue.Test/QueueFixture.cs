@@ -1,10 +1,4 @@
-﻿#region Copyright and file header
-
-// Copyright 2010 Adrian Russell - All Rights Reserved.
-
-#endregion
-
-using System;
+﻿using System;
 using NUnit.Framework;
 
 namespace SimpleQueue.Test
@@ -12,6 +6,14 @@ namespace SimpleQueue.Test
     [TestFixture]
     public class QueueFixture
     {
+        private Guid GetGuid() {
+            return Guid.NewGuid();
+        }
+
+        private static SimpleMessageQueue GetQueue() {
+            return new SimpleMessageQueue();
+        }
+
         private SimpleMessageQueue SendMessageOnQueueInstance() {
             var queue = GetQueue();
 
@@ -21,12 +23,11 @@ namespace SimpleQueue.Test
             return queue;
         }
 
-        private static SimpleMessageQueue GetQueue() {
-            return new SimpleMessageQueue();
-        }
+        [TearDown]
+        public void TearDown() {
+            var queue = GetQueue();
 
-        private Guid GetGuid() {
-            return Guid.NewGuid();
+            queue.Clear();
         }
 
         [Test]
@@ -77,5 +78,16 @@ namespace SimpleQueue.Test
             Assert.That(queue1.MessageCount, Is.EqualTo(2));
             Assert.That(queue2.MessageCount, Is.EqualTo(2));
         }
+
+        [Test]
+        public void Clear_CanEmptyQueueWithOneMessage_MessagesQueuedIsZero() {
+            SimpleMessageQueue queue1 = SendMessageOnQueueInstance();
+
+            Assert.That(queue1.MessageCount, Is.EqualTo(1));
+
+            queue1.Clear();
+
+            Assert.That(queue1.MessageCount, Is.EqualTo(0));
+       }
     }
 }

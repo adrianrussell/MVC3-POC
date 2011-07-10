@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SimpleQueue
 {
-    public class SimpleMessageQueue
+    public class SimpleMessageQueue : ISimpleMessageQueue
     {
         private static readonly Queue<Guid> Queue = new Queue<Guid>();
 
@@ -17,6 +17,10 @@ namespace SimpleQueue
 
         public Guid Receive() {
             return Queue.Dequeue();
+        }
+
+        public void Clear() {
+            Queue.Clear();
         }
     }
 }
