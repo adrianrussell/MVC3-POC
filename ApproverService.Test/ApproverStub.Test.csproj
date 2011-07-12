@@ -54,9 +54,9 @@
       <Project>{76C40AC2-64E4-4082-81D3-49C9861F452D}</Project>
       <Name>ApproverStub</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SimpleQueue\SimpleQueue.csproj">
+    <ProjectReference Include="..\SimpleQueue\Infrastructure.csproj">
       <Project>{20506087-E34F-424D-B124-4A10EDB3864C}</Project>
-      <Name>SimpleQueue</Name>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

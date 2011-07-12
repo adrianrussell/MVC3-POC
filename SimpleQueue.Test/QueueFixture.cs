@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace SimpleQueue.Test
+namespace Infrastructure.Test
 {
     [TestFixture]
     public class QueueFixture

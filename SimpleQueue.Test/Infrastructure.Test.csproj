@@ -8,8 +8,8 @@
     <ProjectGuid>{FB870580-9E9C-4DF7-90FD-CC4CFBB8E1BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleQueue.Test</RootNamespace>
-    <AssemblyName>SimpleQueue.Test</AssemblyName>
+    <RootNamespace>Infrastructure.Test</RootNamespace>
+    <AssemblyName>Infrastructure.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,9 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleQueue\SimpleQueue.csproj">
+    <ProjectReference Include="..\SimpleQueue\Infrastructure.csproj">
       <Project>{20506087-E34F-424D-B124-4A10EDB3864C}</Project>
-      <Name>SimpleQueue</Name>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

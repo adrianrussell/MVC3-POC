@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApproverStub", "ApproverSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApproverStub.Test", "ApproverService.Test\ApproverStub.Test.csproj", "{8BB8997E-9ADF-408B-B8D6-F52FAE38F9D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleQueue", "SimpleQueue\SimpleQueue.csproj", "{20506087-E34F-424D-B124-4A10EDB3864C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "SimpleQueue\Infrastructure.csproj", "{20506087-E34F-424D-B124-4A10EDB3864C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleQueue.Test", "SimpleQueue.Test\SimpleQueue.Test.csproj", "{FB870580-9E9C-4DF7-90FD-CC4CFBB8E1BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Test", "SimpleQueue.Test\Infrastructure.Test.csproj", "{FB870580-9E9C-4DF7-90FD-CC4CFBB8E1BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

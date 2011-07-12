@@ -1,7 +1,7 @@
 ﻿using System;
+using Infrastructure;
 using NUnit.Framework;
 using Rhino.Mocks;
-using SimpleQueue;
 
 namespace ApproverService.Test
 {

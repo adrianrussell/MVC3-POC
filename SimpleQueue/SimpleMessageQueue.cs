@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SimpleQueue
+namespace Infrastructure
 {
     public class SimpleMessageQueue : ISimpleMessageQueue
     {

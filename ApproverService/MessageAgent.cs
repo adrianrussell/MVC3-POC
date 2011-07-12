@@ -1,5 +1,5 @@
 ﻿using System;
-using SimpleQueue;
+using Infrastructure;
 
 namespace ApproverService
 {

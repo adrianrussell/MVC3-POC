@@ -45,9 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleQueue\SimpleQueue.csproj">
+    <ProjectReference Include="..\SimpleQueue\Infrastructure.csproj">
       <Project>{20506087-E34F-424D-B124-4A10EDB3864C}</Project>
-      <Name>SimpleQueue</Name>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
