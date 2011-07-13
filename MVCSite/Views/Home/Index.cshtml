@@ -1,0 +1,13 @@
+﻿@model IList<Model.Banker>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Bankers</h2>
+<ul>
+@foreach (var b in Model)
+{
+    <li>@b.BankerUserId</li>
+}
+</ul>

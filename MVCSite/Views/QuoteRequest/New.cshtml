@@ -1,0 +1,32 @@
+﻿@using System.Web.Mvc.Html
+@model MVCSite.QuoteRequestViewModel
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New</h2>
+
+@*@using (Html.BeginForm()) {*@
+@*    @Html.EditorFor(x => x.Products)*@
+@**@
+@*                              @Html.DropDownList("DropDownList", new SelectList(Model.BankersList, "Key", "Value"))*@
+@**@
+@*                              <ul>*@
+@*                                  @foreach (var b in Model.Products) {<li>@b.Name</li>*@
+@*                                  }*@
+@*                              </ul>*@
+@*    *@
+@* <input type="submit" value="OK" />*@
+    
+<article class="post">
+
+<form action="@Url.Action("Update")" method="post">
+        @Html.EditorFor(x => x.BankerId)
+        <input type="submit" value="Update Post">
+    </form>
+</article>
+
+
+
+

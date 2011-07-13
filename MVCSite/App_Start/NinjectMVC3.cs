@@ -1,3 +1,6 @@
+using Infrastructure.RavenDb;
+using Services;
+
 [assembly: WebActivator.PreApplicationStartMethod(typeof(MVCSite.App_Start.NinjectMVC3), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(MVCSite.App_Start.NinjectMVC3), "Stop")]
 
@@ -10,7 +13,7 @@ namespace MVCSite.App_Start
 
     public static class NinjectMVC3 
     {
-        private static readonly Bootstrapper bootstrapper = new Bootstrapper();
+        private static readonly Bootstrapper Bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
@@ -19,7 +22,7 @@ namespace MVCSite.App_Start
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestModule));
             DynamicModuleUtility.RegisterModule(typeof(HttpApplicationInitializationModule));
-            bootstrapper.Initialize(CreateKernel);
+            Bootstrapper.Initialize(CreateKernel);
         }
         
         /// <summary>
@@ -27,7 +30,7 @@ namespace MVCSite.App_Start
         /// </summary>
         public static void Stop()
         {
-            bootstrapper.ShutDown();
+            Bootstrapper.ShutDown();
         }
         
         /// <summary>
@@ -47,6 +50,8 @@ namespace MVCSite.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Load(new RavenModule(), new ServiceModule());
+            
         }        
     }
 }

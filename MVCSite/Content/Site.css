@@ -6,10 +6,14 @@ body
     background-color: #fff;
 }
 
-header,
+header
+{
+}
 footer,
 nav,
-section {
+section 
+{
+	font-size: 10em;
     display: block;
 }
 
@@ -72,4 +76,10 @@ textarea
 .validation-summary-valid
 {
     display: none;
+}
+
+
+.header-menu-links
+{
+	font-size: 2em;
 }

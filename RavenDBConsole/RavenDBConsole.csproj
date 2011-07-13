@@ -2,18 +2,21 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9BAE3CC0-1183-4921-AB5B-3AC5EB693702}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{CCDBE83A-BAC0-41C7-A2AD-2C3F6788CE3D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCSite.Test</RootNamespace>
-    <AssemblyName>MVCSite.Test</AssemblyName>
+    <RootNamespace>RavenDBConsole</RootNamespace>
+    <AssemblyName>RavenDBConsole</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,7 +25,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,21 +35,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AsyncCtpLibrary">
+      <HintPath>..\packages\RavenDB.1.0.0.397\lib\net40\AsyncCtpLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MissingBitsFromClientProfile">
+      <HintPath>..\packages\RavenDB.1.0.0.397\lib\net40\MissingBitsFromClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.2.2.1.4\lib\net40-Client\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.mocks">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
+    <Reference Include="Raven.Abstractions">
+      <HintPath>..\packages\RavenDB.1.0.0.397\lib\net40\Raven.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="pnunit.framework">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
+    <Reference Include="Raven.Client.Debug">
+      <HintPath>..\packages\RavenDB.1.0.0.397\lib\net40\Raven.Client.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight">
+      <HintPath>..\packages\RavenDB.1.0.0.397\lib\net40\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Json">
+      <HintPath>..\packages\RavenDB.1.0.0.397\lib\net40\Raven.Json.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks">
       <HintPath>..\packages\RhinoMocks.3.6\lib\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,11 +74,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Controllers\QuoteRequestControllerFixture.cs" />
+    <Compile Include="ConsoleModule.cs" />
+    <Compile Include="CreateBankersCommand.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\CreateBankersCommandFixture.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -65,13 +89,13 @@
       <Project>{EAA2AB83-FE88-4098-8FCD-8F01B5224EA2}</Project>
       <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MVCSite\MVCSite.csproj">
-      <Project>{8A0D75E7-CE27-4B35-B525-D01998C46099}</Project>
-      <Name>MVCSite</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{2C3EFC62-68A1-4085-89B2-8B470946AE34}</Project>
       <Name>Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleQueue\Infrastructure.csproj">
+      <Project>{20506087-E34F-424D-B124-4A10EDB3864C}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

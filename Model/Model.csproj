@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9BAE3CC0-1183-4921-AB5B-3AC5EB693702}</ProjectGuid>
+    <ProjectGuid>{EAA2AB83-FE88-4098-8FCD-8F01B5224EA2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCSite.Test</RootNamespace>
-    <AssemblyName>MVCSite.Test</AssemblyName>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,21 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.mocks">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
-    </Reference>
-    <Reference Include="pnunit.framework">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>..\packages\RhinoMocks.3.6\lib\Rhino.Mocks.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,26 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Controllers\QuoteRequestControllerFixture.cs" />
+    <Compile Include="Banker.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Name.cs" />
+    <Compile Include="Opportunity.cs" />
+    <Compile Include="OpportunityApprovals.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{EAA2AB83-FE88-4098-8FCD-8F01B5224EA2}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVCSite\MVCSite.csproj">
-      <Project>{8A0D75E7-CE27-4B35-B525-D01998C46099}</Project>
-      <Name>MVCSite</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{2C3EFC62-68A1-4085-89B2-8B470946AE34}</Project>
-      <Name>Services</Name>
-    </ProjectReference>
+    <Compile Include="Quote.cs" />
+    <Compile Include="QuoteComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
